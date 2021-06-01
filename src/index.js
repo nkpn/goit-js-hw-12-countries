@@ -33,7 +33,7 @@ function searchFn(e) {
                 : onFetchError(data)
         )
         .catch(onFetchError)
-        .finally(()=> form.reset())
+        .finally(()=> refs.searchForm.reset())
 }
 
 function renderCountryCard(country) {
