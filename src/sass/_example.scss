@@ -17,6 +17,22 @@ img {
   height: auto;
 }
 
-.search-form {
+.heading {
+  display: flex;
+  justify-content: center;
+}
+
+.form-control {
   padding: 10px;
+  width: 300px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+}
+
+.list__container {
+  display: flex;
+  justify-content: center;
 }

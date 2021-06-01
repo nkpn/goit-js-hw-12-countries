@@ -18,7 +18,6 @@ function searchFn(e) {
     e.preventDefault();
 
     const form = e.currentTarget;
-    // const searchQuery = form.e.query.value; //* вот тут что-то
     const searchQuery = e.target.value.trim();
     
     if (searchQuery.length < 1) {
@@ -33,7 +32,7 @@ function searchFn(e) {
                 : onFetchError(data)
         )
         .catch(onFetchError)
-        .finally(()=> refs.searchForm.reset())
+        //.finally(()=> refs.searchForm.reset())
 }
 
 function renderCountryCard(country) {
