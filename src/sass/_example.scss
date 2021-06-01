@@ -25,6 +25,12 @@ img {
 .form-control {
   padding: 10px;
   width: 300px;
+
+  &:hover,
+  &:focus {
+    border-color: green;
+    cursor: pointer;
+  }
 }
 
 .search-form {
