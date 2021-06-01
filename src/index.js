@@ -5,9 +5,9 @@ import CountriesCardTamplate from './templates/country-card.hbs';
 import listTemplate from './templates/list-tmpl.hbs';
 const _debounce = require('lodash.debounce');
 //* Pnotify
-// import '@pnotify/core/dist/PNotify.css';
-// import '@pnotify/core/dist/BrightTheme.css';
-// import { alert, defaults, defaultStack } from '@pnotify/core';
+import '@pnotify/core/dist/PNotify.css';
+import '@pnotify/core/dist/BrightTheme.css';
+import { alert, defaults, defaultStack } from '@pnotify/core';
 defaults.maxTextHeight = null; //* убрал колесо прокрутки у pnotify alert
 
 const refs = getRefs();
