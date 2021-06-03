@@ -7,12 +7,12 @@ const _debounce = require('lodash.debounce');
 //* Pnotify
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
-import { alert, defaults, defaultStack } from '@pnotify/core';
+import { alert, error, success, defaults, defaultStack } from '@pnotify/core';
 defaults.maxTextHeight = null; //* убрал колесо прокрутки у pnotify alert
 
 const refs = getRefs();
 
-refs.searchForm.addEventListener('change', _debounce(searchFn, 500));
+refs.searchForm.addEventListener('input', _debounce(searchFn, 500));
 
 function searchFn(e) {
     e.preventDefault();
@@ -38,18 +38,26 @@ function searchFn(e) {
 function renderCountryCard(country) {
     const markup = CountriesCardTamplate(country);
     refs.cardContainer.innerHTML = markup;
+    success({
+        title: 'is this what you were looking for?',
+        delay: 3000,
+    })
 }
 
 function renderList(country) {
     const markList = listTemplate(country);
     refs.cardContainer.innerHTML = markList;
+    success({
+        title: 'Nice list!',
+        delay: 2000,
+    })
 }
 
 function onFetchError() {
     clearDOM();
-    alert({
-    title: 'C`mon! Not this again!',
-    text: 'Too many matches found. Please enter a more specific query ;)',
+    error({
+    title: 'Ooops! Something wrong',
+    text: 'Please try again',
     delay: 2000,
     });
 }
@@ -57,7 +65,7 @@ function onFetchError() {
 function emptyInput() {
     clearDOM();
     alert({
-        text: 'It`s not easy but please enter something',
+        text: 'Please enter some text',
         delay: 2000,
     })
 }
